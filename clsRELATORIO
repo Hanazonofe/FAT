@@ -1,0 +1,307 @@
+
+Private aarqcam     As String  'nome do arquivo
+Private aarqalt     As String  'nome do cmainho alternativo de salvamento
+Private aqtdln1     As Integer 'quantidade de linhas 1
+Private aqtdln2     As Integer 'quantidade de linhas 2
+Private aflexcontr  As String  'contrato
+Private aapolicec   As String  'apolice de busca
+Private aboleto     As String  'nº do boleto
+Private aapolicep   As String  'apolice para o parceiro
+Private ainivig     As Date    'inicio de vigencia
+Private afimvig     As Date    'fim de vigencia
+Private apremio     As Double  'premio
+Private acomp       As String  'competencia do faturamento
+Private anome       As String  'nome do garantido
+Private acpf        As String  'cpf do garantido
+Private aparcela    As Integer 'numero da parcela
+Private aprodatu    As String  'produto atuarial/nome do arquivo
+Private apart       As String  'nome do parceiro
+Private amesnum     As Integer 'MES DE COMPETENCIA Nº
+Private ameslet     As String  'MES COMPETENCIA LETRAS
+Private aano        As Integer 'ANO DA COMPETENCIA
+Private afatini     As Date    'inicio do faturamento
+Private afatfim     As Date    'fim do faturamento
+Private adescpart   As String  'Descrição do relatório
+
+'arqcam'''''''''''''''''''''''''''''''''''''''''''''
+Public Property Get arqcam() As String
+ arqcam = aarqcam
+End Property
+
+Public Property Let arqcam(parqcam As String)
+ aarqcam = parqcam
+End Property
+
+'Propriedade da quantidade de linhas'''''''''''''''''''
+Public Property Get qtdln1() As Integer
+ qtdln1 = aqtdln1
+End Property
+Public Property Let qtdln1(pqtdln1 As Integer)
+ aqtdln1 = pqtdln1
+End Property
+
+'Propriedade da quantidade de linhas'''''''''''''''''''
+Public Property Get qtdln2() As Integer
+ qtdln2 = aqtdln2
+End Property
+Public Property Let qtdln2(pqtdln2 As Integer)
+ aqtdln2 = pqtdln2
+End Property
+    
+' Propriedades do flexcontr''''''''''''''''''''''''''
+Public Property Get flexcontr() As String
+ flexcontr = aflexcontr
+End Property
+
+Public Property Let flexcontr(pflexcontr As String)
+ aflexcontr = pflexcontr
+End Property
+
+' Propriedades do apolicec'''''''''''''''''''''''''''
+Public Property Get apolicec() As String
+ apolicec = aapolicec
+End Property
+
+Public Property Let apolicec(papolicec As String)
+ aapolicec = papolicec
+End Property
+
+' Propriedades do boleto'''''''''''''''''''''''''''''
+Public Property Get boleto() As String
+ boleto = aboleto
+End Property
+
+Public Property Let boleto(pboleto As String)
+ aboleto = pboleto
+End Property
+
+' Propriedades do apolicep'''''''''''''''''''''''''''''
+Public Property Get apolicep() As String
+ apolicep = aapolicep
+End Property
+
+Public Property Let apolicep(papolicep As String)
+ aapolicep = papolicep
+End Property
+
+' Propriedades do inivig'''''''''''''''''''''''''''''''
+Public Property Get inivig() As Date
+ inivig = ainivig
+End Property
+
+Public Property Let inivig(pinivig As Date)
+ ainivig = pinivig
+End Property
+
+' Propriedades do fimvig'''''''''''''''''''''''''''''''
+Public Property Get fimvig() As Date
+ fimvig = afimvig
+End Property
+
+Public Property Let fimvig(pfimvig As Date)
+ afimvig = pfimvig
+End Property
+
+' Propriedades do premio'''''''''''''''''''''''''''''''
+Public Property Get premio() As Double
+ premio = apremio
+End Property
+
+Public Property Let premio(ppremio As Double)
+ apremio = ppremio
+End Property
+
+' Propriedades do competencia'''''''''''''''''''''''''''''''
+Public Property Get comp() As String
+ comp = acomp
+End Property
+
+Public Property Let comp(pcomp As String)
+ acomp = pcomp
+End Property
+
+' Propriedades do nome''''''''''''''''''''''''''''''''''''
+Public Property Get nome() As String
+ nome = anome
+End Property
+
+Public Property Let nome(pnome As String)
+ anome = pnome
+End Property
+
+' Propriedades do cpf''''''''''''''''''''''''''''''''''''
+Public Property Get cpf() As String
+ cpf = acpf
+End Property
+
+Public Property Let cpf(pcpf As String)
+ acpf = pcpf
+End Property
+
+' Propriedades do prodatu''''''''''''''''''''''''''''''''''''
+Public Property Get prodatu() As String
+ prodatu = aprodatu
+End Property
+
+Public Property Let prodatu(pprodatu As String)
+ aprodatu = pprodatu
+End Property
+
+' Propriedades do part''''''''''''''''''''''''''''''''''''
+Public Property Get part() As String
+ part = apart
+End Property
+
+Public Property Let part(ppart As String)
+ apart = ppart
+End Property
+
+'Propriedades mesnum:
+Public Property Get mesnum() As Integer
+ mesnum = amesnum
+End Property
+
+Public Property Let mesnum(pmesnum As Integer)
+    amesnum = pmesnum
+End Property
+
+'Propriedades meslet:
+Public Property Get meslet() As String
+ meslet = ameslet
+End Property
+
+Public Property Let meslet(pmeslet As String)
+    ameslet = pmeslet
+End Property
+
+'Propriedades ano:
+Public Property Get ano() As Integer
+ ano = aano
+End Property
+
+Public Property Let ano(pano As Integer)
+    aano = pano
+End Property
+
+'propriedade parcela:
+Public Property Get parcela() As Integer
+ parcela = aparcela
+End Property
+Public Property Let parcela(pparcela As Integer)
+ aparcela = pparcela
+End Property
+
+'propriedade arqalt:
+Public Property Get arqalt() As String
+arqalt = aarqalt
+End Property
+Public Property Let arqalt(parqalt As String)
+aarqalt = parqalt
+End Property
+
+'propriedade fatini:
+Public Property Get fatini() As Date
+fatini = afatini
+End Property
+Public Property Let fatini(pfatini As Date)
+afatini = pfatini
+End Property
+
+'propriedade fatfim:
+Public Property Get fatfim() As Date
+fatfim = afatfim
+End Property
+Public Property Let fatfim(pfatfim As Date)
+afatfim = pfatfim
+End Property
+
+'propriedade descpart:
+Public Property Get descpart() As String
+descpart = adescpart
+End Property
+Public Property Let descpart(pdescpart As String)
+adescpart = pdescpart
+End Property
+
+
+'Método para transformar Número no Aprév do mes:
+Public Sub transf_mes()
+
+If mesnum = 1 Then
+meslet = "JAN"
+ElseIf mesnum = 2 Then
+meslet = "FEV"
+ElseIf mesnum = 3 Then
+meslet = "MAR"
+ElseIf mesnum = 4 Then
+meslet = "ABR"
+ElseIf mesnum = 5 Then
+meslet = "MAI"
+ElseIf mesnum = 6 Then
+meslet = "JUN"
+ElseIf mesnum = 7 Then
+meslet = "JUL"
+ElseIf mesnum = 8 Then
+meslet = "AGO"
+ElseIf mesnum = 9 Then
+meslet = "SET"
+ElseIf mesnum = 10 Then
+meslet = "OUT"
+ElseIf mesnum = 11 Then
+meslet = "NOV"
+ElseIf mesnum = 12 Then
+meslet = "DEZ"
+End If
+
+End Sub
+
+'monta o caminho onde o relatório será salvo
+Public Sub monta_caminho()
+
+arqcam = "Y:\Producao\EMISSÃO E FATURAMENTO\1. FATURAMENTO\1. ESTIPULAÇÃO\1. EMISSÕES\IMOBILIÁRIO 2\" & apolicec & "\" & ano & "\" & mesnum & ".0 EMISSÃO " & meslet & " " & ano
+
+If Len(Dir(arqcam, vbDirectory) & "") > 0 Then
+strCheck = True
+Else
+strCheck = False
+End If
+
+If strCheck Then
+arqalt = arqcam & "\"
+
+Else
+arqalt = "Y:\Producao\EMISSÃO E FATURAMENTO\1. FATURAMENTO\1. ESTIPULAÇÃO\1. EMISSÕES\IMOBILIÁRIO 2\ARQUIVOS ERRO\"
+End If
+
+End Sub
+
+'monta o descritivo que define a vigência do faturamento
+Public Sub monta_desc_rel()
+Dim dia As Integer
+Dim mes As Integer
+
+'montando a data inicial
+fatini = 16 & "/" & (mesnum - 1) & "/" & ano
+'Day (16) & Month(mesnum - 1) & Year(ano)
+
+'montado a data final
+fatfim = 15 & "/" & mesnum & "/" & ano
+
+descpart = "Demonstrativo Fatura Seguro Fiança " & apolicec & " - Vigência " & fatini & " - " & fatfim
+
+End Sub
+
+Public Sub imprimir_rel()
+
+
+Sheets("RELATORIOS").Select
+Sheets("RELATORIOS").Copy after:=Sheets(4)
+Sheets("RELATORIOS (2)").Name = "RELATORIO"
+    Sheets("RELATORIO").Move
+    ChDir arqalt
+        ActiveWorkbook.SaveAs Filename:= _
+        arqalt & aprodatu, FileFormat:=xlOpenXMLWorkbook, CreateBackup:=False
+        ActiveWorkbook.Close
+
+
+End Sub
